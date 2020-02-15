@@ -12,7 +12,7 @@ namespace EventDrivenDemo.Services
 
         private void WriteAuditLog(object sender, TransactionProcessedEventArgs e)
         {
-            Console.WriteLine($"AUDIT LOG: {e.TransactionType} {e.Amount}");
+            Console.WriteLine($"AUDIT LOG: {e.TransactionType} for ${e.Amount} processed");
         }
     }
 }
