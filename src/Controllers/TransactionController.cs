@@ -13,13 +13,13 @@ namespace EventDrivenDemo.Controllers
         {
             _transactionService = transactionService;
             _auditService = auditService;
+            _auditService.Subscribe(_transactionService);
         }
 
         [HttpPost("deposit")]
         public IActionResult MakeDeposit([FromQuery]decimal amount)
         {
             _transactionService.MakeDeposit(amount);
-            _auditService.WriteAuditLog($"Deposit for ${amount} processed");
             return Ok();
         }
 
@@ -27,7 +27,6 @@ namespace EventDrivenDemo.Controllers
         public IActionResult MakeWithdrawal([FromQuery]decimal amount)
         {
             _transactionService.MakeWithdrawal(amount);
-            _auditService.WriteAuditLog($"Withdrawal for ${amount} processed");
             return Ok();
         }
     }
