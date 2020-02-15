@@ -18,7 +18,7 @@ namespace EventDrivenDemo
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IAuditService, AuditService>();
+            services.AddSingleton<IAuditService, AuditService>();
             services.AddScoped<ITransactionService, TransactionService>();
             services.AddControllers();
         }

@@ -2,6 +2,6 @@
 {
     public interface IAuditService
     {
-        void WriteAuditLog(string log);
+        void Subscribe(ITransactionService transactionService);
     }
 }
