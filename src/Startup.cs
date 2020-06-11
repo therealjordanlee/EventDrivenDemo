@@ -20,6 +20,7 @@ namespace EventDrivenDemo
         {
             services.AddSingleton<IAuditService, AuditService>();
             services.AddScoped<ITransactionService, TransactionService>();
+            services.AddScoped<IRefundService, RefundService>();
             services.AddControllers();
         }
 

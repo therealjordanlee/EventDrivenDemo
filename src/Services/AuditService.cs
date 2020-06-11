@@ -5,7 +5,7 @@ namespace EventDrivenDemo.Services
 {
     public class AuditService : IAuditService
     {
-        public void Subscribe(ITransactionService transactionService)
+        public void Subscribe(IAuditableService transactionService)
         {
             transactionService.OnTransactionProcessed += WriteAuditLog;
         }

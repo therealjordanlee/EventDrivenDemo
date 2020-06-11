@@ -2,6 +2,6 @@
 {
     public interface IAuditService
     {
-        void Subscribe(ITransactionService transactionService);
+        void Subscribe(IAuditableService transactionService);
     }
 }

@@ -19,7 +19,6 @@ namespace EventDrivenDemo.Services
         public void MakeWithdrawal(decimal amount)
         {
             ProcessWithdrawal(amount);
-            ProcessDeposit(amount);
             if (OnTransactionProcessed != null)
             {
                 OnTransactionProcessed(this, new TransactionProcessedEventArgs(amount, TransactionType.Withdrawal));

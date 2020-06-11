@@ -18,6 +18,7 @@ namespace EventDrivenDemo.Events
     public enum TransactionType
     {
         Deposit,
-        Withdrawal
+        Withdrawal,
+        Refund
     }
 }

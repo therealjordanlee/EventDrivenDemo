@@ -3,10 +3,8 @@ using System;
 
 namespace EventDrivenDemo.Services
 {
-    public interface ITransactionService
+    public interface ITransactionService : IAuditableService
     {
-        event EventHandler<TransactionProcessedEventArgs> OnTransactionProcessed;
-
         void MakeDeposit(decimal amount);
 
         void MakeWithdrawal(decimal amount);
